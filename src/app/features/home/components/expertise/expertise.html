@@ -1,0 +1,28 @@
+
+<section class="expertise-section">
+  <div class="container">
+
+    <div class="section-heading">
+      <span class="section-label">
+        ÁREAS DE ATUAÇÃO
+      </span>
+
+      <h2>Onde transformamos oportunidades.</h2>
+    </div>
+
+    <div class="expertise-grid">
+      @for (area of areas; track area.number) {
+        <article class="expertise-card">
+          <span class="card-number">
+            {{ area.number }}
+          </span>
+
+          <h3>{{ area.title }}</h3>
+
+          <p>{{ area.description }}</p>
+        </article>
+      }
+    </div>
+
+  </div>
+</section>

@@ -1,0 +1,55 @@
+
+<header class="site-header">
+  <div class="header-container">
+
+    <a
+      class="brand"
+      routerLink="/"
+      (click)="closeMenu()"
+      aria-label="DH Capital Group - Início"
+    >
+      <span class="brand-name">DH CAPITAL</span>
+      <span class="brand-subtitle">GROUP</span>
+    </a>
+
+    <button
+      class="menu-toggle"
+      type="button"
+      (click)="toggleMenu()"
+      [attr.aria-expanded]="menuOpen()"
+      [attr.aria-label]="menuOpen() ? 'Fechar menu' : 'Abrir menu'"
+      aria-controls="primary-navigation"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <nav
+      id="primary-navigation"
+      class="navigation"
+      [class.is-open]="menuOpen()"
+      aria-label="Navegação principal"
+    >
+      @for (item of navigation; track item.path) {
+        <a
+          [routerLink]="item.path"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: item.exact }"
+          (click)="closeMenu()"
+        >
+          {{ item.label }}
+        </a>
+      }
+
+      <a
+        class="contact-button"
+        routerLink="/contato"
+        (click)="closeMenu()"
+      >
+        Fale conosco
+      </a>
+    </nav>
+
+  </div>
+</header>

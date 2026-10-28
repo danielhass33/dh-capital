@@ -1,0 +1,35 @@
+
+<section class="portfolio-section">
+  <div class="container">
+
+    <div class="portfolio-heading">
+      <div>
+        <span class="section-label">PORTFÓLIO</span>
+        <h2>Nosso ecossistema de soluções.</h2>
+      </div>
+
+      <a routerLink="/portfolio" class="view-all">
+        Ver portfólio completo →
+      </a>
+    </div>
+
+    <div class="portfolio-grid">
+      @for (solution of solutions; track solution.name) {
+        <article class="portfolio-card">
+          <span class="category">
+            {{ solution.category }}
+          </span>
+
+          <h3>{{ solution.name }}</h3>
+
+          <p>{{ solution.description }}</p>
+
+          <a [routerLink]="solution.path">
+            Conhecer solução →
+          </a>
+        </article>
+      }
+    </div>
+
+  </div>
+</section>
